@@ -15,6 +15,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 
+	var any interface{}
 	var a int
 	var b int
 	var intElem int
@@ -22,37 +23,46 @@ func main() {
 
 	for _, strElem := range strings.Split(scanner.Text(), " ") {
 		if strElem == "+" {
-			a, err = s.Pop()
+			any, err = s.Pop()
 			if err != nil {
 				goto Error
 			}
-			b, err = s.Pop()
-			err := s.Push(a + b)
+			a, _ = any.(int)
+			any, err = s.Pop()
+			if err != nil {
+				goto Error
+			}
+			b, _ = any.(int)
+			err = s.Push(a + b)
 			if err != nil {
 				goto Error
 			}
 		} else if strElem == "-" {
-			a, err = s.Pop()
+			any, err = s.Pop()
 			if err != nil {
 				goto Error
 			}
-			b, err = s.Pop()
+			a, _ = any.(int)
+			any, err = s.Pop()
 			if err != nil {
 				goto Error
 			}
+			b, _ = any.(int)
 			err = s.Push(b - a)
 			if err != nil {
 				goto Error
 			}
 		} else if strElem == "*" {
-			a, err = s.Pop()
+			any, err = s.Pop()
 			if err != nil {
 				goto Error
 			}
-			b, err = s.Pop()
+			a, _ = any.(int)
+			any, err = s.Pop()
 			if err != nil {
 				goto Error
 			}
+			b, _ = any.(int)
 			err = s.Push(a * b)
 			if err != nil {
 				goto Error
@@ -69,10 +79,11 @@ func main() {
 		}
 	}
 
-	a, err = s.Pop()
+	any, err = s.Pop()
 	if err != nil {
 		goto Error
 	}
+	a, _ = any.(int)
 	fmt.Printf("= %d\n", a)
 	return
 

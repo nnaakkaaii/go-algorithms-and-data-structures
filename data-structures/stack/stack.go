@@ -5,7 +5,7 @@ import "errors"
 type Stack struct {
 	top int
 	max int
-	arr []int
+	arr []interface{}
 }
 
 // NewStack initialize Stack
@@ -13,23 +13,23 @@ func NewStack(max int) *Stack {
 	stack := new(Stack)
 	stack.top = 0
 	stack.max = max
-	stack.arr = make([]int, max)
+	stack.arr = make([]interface{}, max)
 	return stack
 }
 
-// isEmpty if Stack is empty
-func (s *Stack) isEmpty() bool {
+// IsEmpty if Stack is empty
+func (s *Stack) IsEmpty() bool {
 	return s.top == 0
 }
 
-// isFull if Stack is full
-func (s *Stack) isFull() bool {
+// IsFull if Stack is full
+func (s *Stack) IsFull() bool {
 	return s.top >= s.max - 1
 }
 
 // Push adds an element
-func (s *Stack) Push(v int) error {
-	if s.isFull() {
+func (s *Stack) Push(v interface{}) error {
+	if s.IsFull() {
 		return errors.New("stack overflow")
 	}
 	s.top++
@@ -38,8 +38,8 @@ func (s *Stack) Push(v int) error {
 }
 
 // Pop delete an element
-func (s *Stack) Pop() (int, error) {
-	if s.isEmpty() {
+func (s *Stack) Pop() (interface{}, error) {
+	if s.IsEmpty() {
 		return 0, errors.New("stack underflow")
 	}
 	s.top--

@@ -6,7 +6,7 @@ type Queue struct {
 	head int
 	tail int
 	max int
-	arr []int
+	arr []interface{}
 }
 
 // NewQueue initialize Queue
@@ -15,23 +15,23 @@ func NewQueue(max int) *Queue {
 	queue.head = 0
 	queue.tail = 0
 	queue.max = max
-	queue.arr = make([]int, max)
+	queue.arr = make([]interface{}, max)
 	return queue
 }
 
-// isEmpty if Queue is empty
-func (q *Queue) isEmpty() bool {
+// IsEmpty if Queue is empty
+func (q *Queue) IsEmpty() bool {
 	return q.head == q.tail
 }
 
-// isFull if Full is full
-func (q *Queue) isFull() bool {
+// IsFull if Full is full
+func (q *Queue) IsFull() bool {
 	return q.head == (q.tail + 1) % q.max
 }
 
 // Enqueue adds an element
-func (q *Queue) Enqueue(v int) error {
-	if q.isFull() {
+func (q *Queue) Enqueue(v interface{}) error {
+	if q.IsFull() {
 		return errors.New("queue overflow")
 	}
 	q.arr[q.tail] = v
@@ -44,8 +44,8 @@ func (q *Queue) Enqueue(v int) error {
 }
 
 // Dequeue deletes an element
-func (q *Queue) Dequeue() (int, error) {
-	if q.isEmpty() {
+func (q *Queue) Dequeue() (interface{}, error) {
+	if q.IsEmpty() {
 		return 0, errors.New("queue underflow")
 	}
 	v := q.arr[q.head]
