@@ -3,7 +3,7 @@
 
 未ソート部分の先頭をソート部分の適切な位置に挿入する
 
-(前から要素を見ていき、順序関係が入れ替わる場所に挿入する)
+(前から要素を見ていき、バブルソートの要領で順序関係が入れ替わる場所に挿入する)
 
 ![挿入ソート](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F44288%2Fcf7945e7-ed0a-3629-6616-a8c9d234b5c6.gif?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=801fcfd3ae6e9e643ebd58298947dbb8)
 
