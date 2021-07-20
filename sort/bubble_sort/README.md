@@ -1,8 +1,9 @@
 # バブルソート
 配列の末尾から隣接する要素の並び替えを行うか否かを判定していく
+
 1回の実行で前から決定していくため、内側のループの範囲は狭くなっていく
 
-![バブルソート](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
+![バブルソート](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F44288%2F883b7528-faf6-2d22-7c9c-fad496380114.gif?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=6a622c79d774a762bde9239ed9b4725a)
 
 ## 特徴
 - stableなソート
