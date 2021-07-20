@@ -2,7 +2,7 @@
 配列の末尾から隣接する要素の並び替えを行うか否かを判定していく
 1回の実行で前から決定していくため、内側のループの範囲は狭くなっていく
 
-![バブルソート](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Sorting_bubblesort_anim.gif)
+![バブルソート](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
 
 ## 特徴
 - stableなソート
