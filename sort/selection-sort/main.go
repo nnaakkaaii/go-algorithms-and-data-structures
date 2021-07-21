@@ -1,6 +1,7 @@
 package main
 
 import (
+	"algorithm/utils"
 	"bufio"
 	"fmt"
 	"os"
@@ -32,15 +33,7 @@ func main() {
 	}
 	// リストを入力
 	scanner.Scan()
-	var intList []int
-	for _, strElem := range strings.Split(scanner.Text(), " ") {
-		intElem, err := strconv.Atoi(strElem)
-		if err != nil {
-			fmt.Println("input error")
-			return
-		}
-		intList = append(intList, intElem)
-	}
-	sortedList := selectionSort(intList, numList)
+	list := utils.StrToInt(strings.Split(scanner.Text(), " "))
+	sortedList := selectionSort(list, numList)
 	fmt.Println(sortedList)
 }

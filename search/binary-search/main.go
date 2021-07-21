@@ -1,6 +1,7 @@
 package main
 
 import (
+	"algorithm/utils"
 	"bufio"
 	"fmt"
 	"os"
@@ -25,30 +26,20 @@ func binarySearch(list []int, listLength int, key int) int {
 }
 
 func main() {
-	strToInt := func (strList []string) []int {
-		intList := make([]int, len(strList))
-		for i, strElem := range strList {
-			intElem, _ := strconv.Atoi(strElem)
-			intList[i] = intElem
-		}
-		return intList
-	}
 	sum := 0
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	targetLength, _ := strconv.Atoi(scanner.Text())
 	scanner.Scan()
-	targetStr := strings.Split(scanner.Text(), " ")
-	targetInt := strToInt(targetStr)
+	target := utils.StrToInt(strings.Split(scanner.Text(), " "))
 
 	scanner.Scan()
 	keysLength, _ := strconv.Atoi(scanner.Text())
 	scanner.Scan()
-	keysStr := strings.Split(scanner.Text(), " ")
-	keysInt := strToInt(keysStr)
+	keys := utils.StrToInt(strings.Split(scanner.Text(), " "))
 
 	for i := 0; i < keysLength; i++ {
-		if binarySearch(targetInt, targetLength, keysInt[i]) >= 0 {
+		if binarySearch(target, targetLength, keys[i]) >= 0 {
 			sum++
 		}
 	}
