@@ -12,7 +12,7 @@ import (
  * forの終了条件・キーとの比較の2つの比較演算を行っているため低速
  */
 func lineSearchOld(list []string, n int, key string) int {
-	for i := 0; i < n; i ++ {
+	for i := 0; i < n; i++ {
 		if list[i] == key {
 			return i
 		}
@@ -29,12 +29,11 @@ func lineSearch(list []string, n int, key string) int {
 	for list[i] != key {
 		i++
 	}
-	if i == n + 1 {
+	if i == n+1 {
 		return -1
 	}
 	return i
 }
-
 
 func main() {
 	sum := 0

@@ -24,7 +24,7 @@ func (s *Stack) IsEmpty() bool {
 
 // IsFull if Stack is full
 func (s *Stack) IsFull() bool {
-	return s.top >= s.max - 1
+	return s.top >= s.max-1
 }
 
 // Push adds an element
@@ -43,5 +43,5 @@ func (s *Stack) Pop() (interface{}, error) {
 		return 0, errors.New("stack underflow")
 	}
 	s.top--
-	return s.arr[s.top + 1], nil
+	return s.arr[s.top+1], nil
 }

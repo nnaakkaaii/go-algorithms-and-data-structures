@@ -14,8 +14,8 @@ func bubbleSortOld(list []int, numList int) []int {
 	for flag {
 		flag = false
 		for j := numList - 1; j > 0; j-- {
-			if list[j] < list[j - 1] {
-				list[j], list[j - 1] = list[j - 1], list[j]
+			if list[j] < list[j-1] {
+				list[j], list[j-1] = list[j-1], list[j]
 				flag = true
 			}
 		}
@@ -25,12 +25,12 @@ func bubbleSortOld(list []int, numList int) []int {
 
 func bubbleSort(list []int, numList int) []int {
 	flag := true
-	i := 0  // 未ソート部分列のインデックス
+	i := 0 // 未ソート部分列のインデックス
 	for flag {
 		flag = false
 		for j := numList - 1; j > i; j-- {
-			if list[j] < list[j - 1] {
-				list[j], list[j - 1] = list[j - 1], list[j]
+			if list[j] < list[j-1] {
+				list[j], list[j-1] = list[j-1], list[j]
 				flag = true
 			}
 		}

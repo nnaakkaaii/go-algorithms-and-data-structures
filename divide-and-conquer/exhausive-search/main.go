@@ -12,13 +12,13 @@ import (
 var n int
 var list []int
 
-func solve (i int, m int) bool {
+func solve(i int, m int) bool {
 	if m == 0 {
 		return true
 	} else if i >= n {
 		return false
 	}
-	return solve(i + 1, m) || solve(i + 1, m - list[i])
+	return solve(i+1, m) || solve(i+1, m-list[i])
 }
 
 func main() {

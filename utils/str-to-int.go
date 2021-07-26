@@ -2,8 +2,7 @@ package utils
 
 import "strconv"
 
-
-func StrToInt (strList []string) []int {
+func StrToInt(strList []string) []int {
 	intList := make([]int, len(strList))
 	for i, strElem := range strList {
 		intElem, _ := strconv.Atoi(strElem)

@@ -3,7 +3,7 @@ package doubly_linked_list
 import "fmt"
 
 type Node struct {
-	key int
+	key  int
 	prev *Node
 	next *Node
 }

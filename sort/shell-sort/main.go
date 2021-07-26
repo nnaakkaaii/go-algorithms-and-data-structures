@@ -14,10 +14,10 @@ func insertionSort(list []int, numList int, skipInterval int) []int {
 		v := list[i]
 		j := i - skipInterval
 		for j >= 0 && list[j] > v {
-			list[j + skipInterval] = list[j]
+			list[j+skipInterval] = list[j]
 			j = j - skipInterval
 		}
-		list[j + skipInterval] = v
+		list[j+skipInterval] = v
 	}
 	return list
 }
@@ -27,7 +27,7 @@ func shellSort(list []int, numList int) []int {
 	skipInterval := 1
 	for skipInterval < numList {
 		skipIntervalList = append([]int{skipInterval}, skipIntervalList...)
-		skipInterval = 3 * skipInterval + 1
+		skipInterval = 3*skipInterval + 1
 	}
 	for _, skipInterval = range skipIntervalList {
 		insertionSort(list, numList, skipInterval)

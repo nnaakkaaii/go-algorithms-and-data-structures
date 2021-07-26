@@ -1,6 +1,7 @@
 package main
 
 import (
+	"algorithm/sort/quick-sort/utils/partition"
 	"algorithm/utils"
 	"bufio"
 	"fmt"
@@ -8,19 +9,6 @@ import (
 	"strconv"
 	"strings"
 )
-
-func insertionSort(list []int, numList int) []int {
-	for i := 1; i < numList; i++ {
-		v := list[i]
-		j := i - 1
-		for j >= 0 && list[j] > v {
-			list[j+1] = list[j]
-			j--
-		}
-		list[j+1] = v
-	}
-	return list
-}
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -34,6 +22,6 @@ func main() {
 	// リストを入力
 	scanner.Scan()
 	list := utils.StrToInt(strings.Split(scanner.Text(), " "))
-	sortedList := insertionSort(list, numList)
-	fmt.Println(sortedList)
+	index := partition.Partition(list, 0, numList - 1)
+	fmt.Println(list[:index], list[index], list[1 + index:])
 }

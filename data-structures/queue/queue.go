@@ -5,8 +5,8 @@ import "errors"
 type Queue struct {
 	head int
 	tail int
-	max int
-	arr []interface{}
+	max  int
+	arr  []interface{}
 }
 
 // NewQueue initialize Queue
@@ -26,7 +26,7 @@ func (q *Queue) IsEmpty() bool {
 
 // IsFull if Full is full
 func (q *Queue) IsFull() bool {
-	return q.head == (q.tail + 1) % q.max
+	return q.head == (q.tail+1)%q.max
 }
 
 // Enqueue adds an element
@@ -35,7 +35,7 @@ func (q *Queue) Enqueue(v interface{}) error {
 		return errors.New("queue overflow")
 	}
 	q.arr[q.tail] = v
-	if q.tail + 1 == q.max {
+	if q.tail+1 == q.max {
 		q.tail = 0
 	} else {
 		q.tail++

@@ -6,7 +6,7 @@ type Dict struct {
 	arr [M]string
 }
 
-func NewDict () *Dict {
+func NewDict() *Dict {
 	return new(Dict)
 }
 
@@ -26,9 +26,9 @@ func (dict *Dict) getKey(keyString string) int {
 }
 
 func (dict *Dict) createHash(key int, i int) int {
-	h1 := func (key int) int {return key % M}
-	h2 := func (key int) int {return 1 + key % (M - 1)}
-	return (h1(key) + i * h2(key)) % M
+	h1 := func(key int) int { return key % M }
+	h2 := func(key int) int { return 1 + key%(M-1) }
+	return (h1(key) + i*h2(key)) % M
 }
 
 func (dict *Dict) Find(keyString string) bool {
@@ -45,7 +45,7 @@ func (dict *Dict) Find(keyString string) bool {
 
 func (dict *Dict) Insert(keyString string) bool {
 	key := dict.getKey(keyString)
-	for i := 0; ;i++ {
+	for i := 0; ; i++ {
 		h := dict.createHash(key, i)
 		if dict.arr[h] == keyString {
 			return true
