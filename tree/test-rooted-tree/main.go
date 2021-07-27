@@ -1,7 +1,7 @@
 package main
 
 import (
-	tree_components "algorithm/tree/rooted-tree/tree-components"
+	"algorithm/tree/rooted-tree"
 	"algorithm/utils"
 	"bufio"
 	"fmt"
@@ -9,8 +9,6 @@ import (
 	"strconv"
 	"strings"
 )
-
-const NIL = -1
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -22,9 +20,9 @@ func main() {
 		return
 	}
 
-	nodes := make([]tree_components.Node, numNodes)
+	nodes := make([]rooted_tree.Node, numNodes)
 	for i := 0; i < numNodes; i++ {
-		nodes[i] = *tree_components.NewNode()
+		nodes[i] = *rooted_tree.NewNode()
 	}
 
 	for i := 0; i < numNodes; i++ {
@@ -45,7 +43,7 @@ func main() {
 		}
 	}
 
-	tree := tree_components.NewTree(nodes, numNodes)
+	tree := rooted_tree.NewTree(nodes, numNodes)
 
 	for i := 0; i < numNodes; i++ {
 		s := ""

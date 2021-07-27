@@ -1,4 +1,4 @@
-package tree_components
+package rooted_tree
 
 const MAX = 100005
 const NIL = -1
