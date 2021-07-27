@@ -45,3 +45,7 @@ func (s *Stack) Pop() (interface{}, error) {
 	s.top--
 	return s.arr[s.top+1], nil
 }
+
+func (s *Stack) Top() interface{} {
+	return s.arr[s.top]
+}

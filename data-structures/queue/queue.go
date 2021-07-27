@@ -56,3 +56,8 @@ func (q *Queue) Dequeue() (interface{}, error) {
 	}
 	return v, nil
 }
+
+func (q *Queue) Front() interface{} {
+	v := q.arr[q.head]
+	return v
+}
